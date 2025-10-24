@@ -90,8 +90,8 @@
  }
 
  int main() {
-    string s = "abcdef"; 
-    vector<int> freq = {5, 9, 12, 13, 16, 45};
+    string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+    vector<int> freq = {77, 17,32, 42, 120, 24, 17, 50, 76, 4, 7, 42, 24, 67, 67, 20, 5, 59, 67, 85, 37, 12, 22, 4, 22, 2};
     vector<string> ans = huffmanCodes(s, freq); 
     for (int i=0; i< ans.size(); i++){
         cout << ans[i] << " ";
