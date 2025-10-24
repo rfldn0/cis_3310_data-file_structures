@@ -89,21 +89,34 @@
     return ans;
  }
 
- // function to calculate the length 
- int countLength(int ans) {
-    
-
+ // function to calculate the length
+ int countLength(string code) {
+    return code.length();
  }
 
  int main() {
-    int freq_x_length; 
-    int length; 
-    string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+    int freq_x_length = 0;
+    int length;
+    string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     vector<int> freq = {77, 17,32, 42, 120, 24, 17, 50, 76, 4, 7, 42, 24, 67, 67, 20, 5, 59, 67, 85, 37, 12, 22, 4, 22, 2};
-    vector<string> ans = huffmanCodes(s, freq); 
+    vector<string> ans = huffmanCodes(s, freq);
+
+    cout << "Letter    Frequency       Code           Length    Freq X Len" << endl;
+    cout << "----------  ---------------  -------------  ---------  ---------------" << endl;
+
     for (int i=0; i< ans.size(); i++) {
-        cout << ans[i] << " ";
+        //count length
+        length = countLength(ans[i]);
+
+        //calculate the frequency times length
+        int freqXLen = freq[i] * length;
+        freq_x_length += freqXLen;
+
+        printf("%-10c  %-15d  %-13s  %-9d  %-15d\n", s[i], freq[i], ans[i].c_str(), length, freqXLen);
     }
 
-    return 0; 
+    //print the sum of the last column
+    cout << "\nThe weighted minimum path length is: " << freq_x_length << endl;
+
+    return 0;
  }
