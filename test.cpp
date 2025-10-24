@@ -89,11 +89,19 @@
     return ans;
  }
 
+ // function to calculate the length 
+ int countLength(int ans) {
+    
+
+ }
+
  int main() {
+    int freq_x_length; 
+    int length; 
     string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
     vector<int> freq = {77, 17,32, 42, 120, 24, 17, 50, 76, 4, 7, 42, 24, 67, 67, 20, 5, 59, 67, 85, 37, 12, 22, 4, 22, 2};
     vector<string> ans = huffmanCodes(s, freq); 
-    for (int i=0; i< ans.size(); i++){
+    for (int i=0; i< ans.size(); i++) {
         cout << ans[i] << " ";
     }
 
